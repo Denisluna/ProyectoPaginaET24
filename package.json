@@ -1,0 +1,15 @@
+{
+  "name": "pagina-et24",
+  "version": "1.0.0",
+  "description": "pagina de la escuela",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Denis Luna, Lucas De La pina, Nahuel Serruya, Lucas Gonzales",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jade": "^1.11.0"
+  }
+}
