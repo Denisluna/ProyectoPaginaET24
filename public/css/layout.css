@@ -95,8 +95,16 @@ a{
   width: 100%;
 }
 .container{
+  margin: 20px 30px;
   font-family: 'Oswald', sans-serif;
-  font-weight: 200;
   letter-spacing: 3px;
   font-size: 20px;
+}
+.container p, .container ul, .container ol{
+  text-align: justify;
+  font-weight: 200;
+  margin: 15px 0;
+}
+.container ul, .container ol{
+  margin-left: 20px;
 }
