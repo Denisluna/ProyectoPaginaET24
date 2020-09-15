@@ -30,6 +30,7 @@ a{
   width: 100%;
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 .navigation{
   padding: 0 20px;
@@ -97,45 +98,73 @@ a{
 .header-container{
   background-image: url('../../public/images/fondo.jpg');
   background-size: cover;
-  position: sticky;
+  position: sticky;<
   weight:100vw;
-  height: 300px;
+  height: 400px;
   z-index: -2;
   top: 40px;
 }
 .header-container h1{
-  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 3em;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   text-decoration: underline;
   color: #CAD49D;
-  line-height: 300px;
-  width: 100%;
   text-align: center;
   vertical-align: center;
-  line-height: 300px;
   letter-spacing: 4px;
 }
 .container{
-  padding: 50px 30px 10px 30px;
+  padding: 0px 150px 0px 150px;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 1px;
-  font-size: 20px;
+  font-size: 16px;
   width: 100%;
   background: #fff;
   z-index: 10;
-  -webkit-box-shadow: 0px -10px 42px -7px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px -10px 42px -7px rgba(0,0,0,0.75);
-  box-shadow: 0px -10px 42px -7px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 16px 109px 54px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 16px 109px 54px rgba(0,0,0,0.75);
+  box-shadow: 0px 16px 109px 54px rgba(0,0,0,0.75);
+  min-height: 100vh;
 }
-.container p, .container ul, .container ol{
+.container-content{
+  padding: 60px 100px 0px 100px;
+  position: relative;
+}
+.container-content::before{
+  content: "";
+  position: absolute;
+  border-top: 0px;
+  top: 0;
+  left: -40px;
+  width: 40px;
+  height: 100%;
+  background-image: linear-gradient(to right, #fff 20%, rgba(0, 0, 0, 0.3) 200%);
+  z-index: 10;
+}
+.container-content::after{
+  content: "";
+  position: absolute;
+  border-top: 0px;
+  top: 0;
+  right: -40px;
+  width: 40px;
+  height: 100%;
+  background-image: linear-gradient(to left, #fff 20%, rgba(0, 0, 0, 0.3) 200%);
+  z-index: 10;
+} */
+.container-content p, .container-content ul, .container-content ol{
   text-align: justify;
   font-weight: 200;
   margin: 15px 0;
 }
-.container p:nth-child(1){
+.container-content p:nth-child(1){
   margin-top: 0;
 }
-.container ul, .container ol{
+.container-content ul, .container-content ol{
   margin-left: 20px;
 }
