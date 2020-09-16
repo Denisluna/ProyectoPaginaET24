@@ -1,4 +1,6 @@
 $(function(){
+  const imageBannerHeight = window.innerHeight - $('.banner').height() - $('.header').height();
+  $('.header-container').css('height', `${imageBannerHeight}px`)
   const transitionDelay = window.innerWidth < 860 ? 300 : 100;
   $(document).mouseup(function(e){
     let dropMenu = $(".dropdown-container");
