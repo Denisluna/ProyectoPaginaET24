@@ -14,17 +14,18 @@ a{
   font-family: 'Bebas Neue', cursive;
 }
 .banner{
-  height: 100px;
+  height: 120px;
   background: #CAD49D;
   padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .banner .main-title, .banner .title-desc{
-  display: inline-block;
-  line-height: 100px;
   letter-spacing: 4px;
 }
-.banner .title-desc{
-  float: right;
+.banner .main-title img{
+  height: 100px;
 }
 .header{
   width: 100%;
@@ -34,7 +35,7 @@ a{
 }
 .navigation{
   padding: 0 20px;
-  height: 40px;
+  height: 50px;
   background: #222;
   display: flex;
   align-items: center;
@@ -47,8 +48,8 @@ a{
   display: inline-block;
 }
 .nav-links a{
-  height: 40px;
-  padding: 14px 15px;
+  height: 50px;
+  padding: 16.5px 15px;
   font-size: 0.625em;
   line-height: 12px;
   letter-spacing: 3px;
@@ -86,7 +87,7 @@ a{
   background: #111;
   position: absolute;
   transition: 0s;
-  top: 40px;
+  top: 50px;
   right: 0;
   min-width: 180px;
   z-index: 2;
