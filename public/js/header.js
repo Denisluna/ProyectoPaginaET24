@@ -42,4 +42,10 @@ $(function(){
     window.scrollTo(0, parseInt(scrollY) * -1);
     $('.nav-links').css('right', '-100%');
   });
+  $('.shw-btn').click(function(){
+    const containerTopPosition = $('.container').position().top;
+    $('html, body').animate({
+        scrollTop: containerTopPosition
+      }, 400)
+  });
 });
