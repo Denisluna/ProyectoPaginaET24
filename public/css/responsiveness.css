@@ -34,6 +34,38 @@
     text-align: center;
     width: 100%;
   }
+  .news-row{
+    flex-direction: column;
+    float: left;
+  }
+  .news{
+    height: 300px;
+    width: 340px;
+  }
+  .header-container{
+    max-height: 400px;
+  }
+  .header-box{
+    width: 100%;
+    height: 400px;
+  }
+  .header-title{
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+  .header-img-c{
+    position: absolute;
+    background-image: url('../../public/images/escuela.jpg');
+  }
+  .header-img-c img{
+    overflow: hidden;
+  }
+  .container-content{
+    padding: 60px 60px;
+  }
+  .container-content::after{
+    display: none;
+  }
 }
 @media screen and (max-width: 750px){
   .navigation{
@@ -54,5 +86,8 @@
   }
   .banner .title-desc{
     display: none;
+  }
+  .container-content{
+    padding: 60px 30px;
   }
 }

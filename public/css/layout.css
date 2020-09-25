@@ -10,12 +10,13 @@ a{
   text-decoration: none;
   color: #FFF;
 }
-.banner, .header{
+.banner, .header, .news-content{
   font-family: 'Bebas Neue', cursive;
 }
 .banner{
   height: 120px;
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 15%, rgba(139,213,216,1) 100%);
   padding: 0 30px;
   display: flex;
   justify-content: space-between;
@@ -99,13 +100,47 @@ a{
 .dropdown-container a{
   width: 100%;
 }
+.slider{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.slider ul{
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation-duration: 20s;
+  animation-name: cambio;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.slider li{
+  width: 100%;
+  list-style: none;
+}
+.slider img{
+  width: 100%;
+  overflow: hidden;
+}
+@keyframes cambio {
+  0%{margin-left: 0;}
+  20%{margin-left: 0;}
+
+  25%{margin-left: -100%;}
+  45%{margin-left: -100%;}
+
+  50%{margin-left: -200%;}
+  70%{margin-left: -200%;}
+
+  75%{margin-left: -300%;}
+  100%{margin-left: -300%;}
+}
 .header-container{
   min-height: 400px;
   height: 400px;
   max-height: 100%;
   overflow: hidden;
-  /* position: sticky;
-  z-index: -1; */
   top: 50px;
 }
 .header-box{
@@ -124,7 +159,6 @@ a{
   width: 40px;
   background: linear-gradient(to right, #111 25%, rgba(0,0,0, 0) 80%);
   z-index: 1;
-
 }
 .header-img-c{
   background-image: url('../../public/images/escuela.jpg');
@@ -185,7 +219,6 @@ a{
   outline: none;
 }
 .container{
-  padding: 0px 150px 0px 150px;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 1px;
   font-size: 16px;
@@ -201,7 +234,10 @@ a{
 .container-content{
   padding: 60px 100px;
   position: relative;
+  width: 100%;
   min-height: 100vh;
+  max-width: 950px;
+  margin: 0 auto;
 }
 .container-content::before{
   content: "";
@@ -242,7 +278,7 @@ hr{
 .c-loader{
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
@@ -259,7 +295,6 @@ hr{
 }
 .transition-wipe{
   transition: 1.2s ease;
-  transform: scaleX(0);
 }
 .transition-fade{
   transition: .3s;
@@ -272,5 +307,66 @@ html.is-animating body{
   position: fixed;
 }
 html.is-animating .transition-wipe{
-  transform: scaleX(1);
+  left: 0;
+}
+.news-content{
+  margin: 40px 0px;
+  width: 100%;
+  overflow: auto;
+}
+.news-row{
+  display: flex;
+  justify-content: space-around;
+}
+.news{
+  height: 300px;
+  width: 400px;
+  background-color: black;
+  margin: 20px;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+}
+.news:hover img{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.news i{
+  color: #111;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 35px;
+  margin: 10px;
+  z-index: 15;
+}
+.news img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s ease;
+}
+.news h1{
+  color: #FFF;
+  font-weight: 200;
+  margin-left: 10px;
+  letter-spacing: 1px;
+}
+.news p{
+  color: #FFF;
+  font-weight: 200;
+  padding: 5px 10px;
+}
+.news-desc{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color:rgba(5, 5, 4, 0.6);
+  width: 100%;
+}
+.news-paragraph{
+  background-color:rgba(2, 2, 2, 0.6);
+  border-top: 1.5px solid #FFF;
 }
