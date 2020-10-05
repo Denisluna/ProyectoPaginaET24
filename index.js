@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const server = http.createServer(app);
 
-const PORT = 8080;
+const PORT = 3000;
 
 app.set('view engine', 'jade');
 
