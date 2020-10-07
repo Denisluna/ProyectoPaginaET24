@@ -1,0 +1,13 @@
+extends ./layout.jade
+block contenido
+  main(data-barba="container" data-barba-namespace="login")
+    .block
+      h1 Inicia Sesión
+      form(action="/login" method="POST")
+        .row
+          label(for="email") Email
+          input(type="email" id="email" name="email" required) 
+        .row
+          label(for="password") Contraseña
+          input(type="password" id="password" name="password" required) 
+      a(href="/register") Aún no tienes cuenta? - Registrate

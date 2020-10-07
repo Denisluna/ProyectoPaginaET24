@@ -6,6 +6,7 @@
 @media screen and (max-width: 780px){
   .res-navigation.show{
     visibility: visible;
+    overflow-y: auto;
   }
   .res-navigation.show .nav-main::before{
     transform: scaleY(1);

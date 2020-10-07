@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Monstserrat", sans-serif;
 }
 html{
   font-size: 100%;
@@ -11,6 +10,8 @@ body{
   width: 100%;
   height: 100vh;
   overflow: auto;
+  background: #dff9fb;
+  font-family: "Monstserrat", sans-serif;
 }
 /*  NAVEGACION DE LA PAGINA ----------------------------------------------------------------------------------------------*/
 
@@ -26,6 +27,7 @@ header{
   width: 100%;
   height: 4.0625rem;
   border-bottom: 1px solid #e1e1e1;
+  z-index: 10;
 }
 
 /*  LOGO DE LA NAVEGACION -------------------------------------------------------------*/
@@ -88,6 +90,7 @@ header a:hover img{
   height: auto;
   min-width: 300px;
   padding: 0.9375rem 0;
+  pointer-events: none;
 }
 .dropdown .dropdown-content a{
   display: block;
@@ -133,15 +136,19 @@ header a:hover img{
 
 /*  ESTILO LINKS DE NAVEGACION ----------------------------------------------------------------------------------------------*/
 
-.contact-btn{
+/* .contact-btn{
   color: #fff;
-  padding: 8px 15px;
   margin-right: 5px;
-  border-radius: 18px;
+  border-radius: 50%;
   background: #3498db;
-  text-align: center;
   cursor: pointer;
-}
+  font-size: 1.2rem;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  display: inline-block;
+} */
 
 .show-menu-btn{
   display: none;
@@ -159,7 +166,7 @@ header a:hover img{
   bottom: 0;
   visibility: hidden;
   transition: visibility 0s .8s;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .nav-main{
   padding: 1.33rem 0 3rem;
@@ -277,12 +284,103 @@ main{
 }
 .lnd-img{
   background: rgb(233, 233, 233);
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: url('../images/gabinete.jpg');
   background-position: center;
   background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.block{
+  width: 100%;
+  min-height:100vh;
+  overflow-y: auto;
+  padding: 4.0625rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.row{
+  width: 100%;
+  max-width: 980px;
+}
+.content-desc{
+  text-align: center;
+}
+.content-desc p{
+  padding: 0 3rem;
+}
+.cards-container{
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.card{
+  min-height: 250px;
+  max-width: 400px;
+  max-height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  margin: .5rem;
+}
+.card-img{
+  position: relative;
+}
+.card-img img{
+  width: 100%;
+  /* filter: blur(2px); */
+  height: auto;
+  object-fit: cover;
+}
+.card-img h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.4rem;
+  color: #fff;
+  z-index: 5;
+}
+.card-c{
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: .6s cubic-bezier(.075,.82,.165,1) .2s;
+  padding: 1rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: default;
+  z-index: 7;
+}
+.card-c button{
+  outline: none;
+  border: 1px solid #d1d1d1;
+  background: transparent;
+  padding: .5rem 7rem;
+  cursor: pointer;
+}
+.title{
+  text-align: center;
+  padding: 1rem 0;
+}
+.card:hover .card-c{
+  transform: translateX(0%);
 }

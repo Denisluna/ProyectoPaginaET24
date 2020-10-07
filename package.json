@@ -9,7 +9,11 @@
   "author": "Denis Luna, Lucas De La pina, Nahuel Serruya, Lucas Gonzales",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "express": "^4.17.1",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "mongoose": "^5.10.8",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }
