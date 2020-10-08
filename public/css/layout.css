@@ -7,6 +7,7 @@ html{
   font-size: 100%;
 }
 body{
+  font-family: "Monserrat", sans-serif;
   width: 100%;
   height: 100vh;
   overflow: auto;
@@ -283,17 +284,6 @@ main{
   width: 100%;
   height: 100%;
 }
-.lnd-img{
-  background: rgb(233, 233, 233);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url('../images/gabinete.jpg');
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
 .block{
   width: 100%;
   min-height: 100vh;
@@ -437,4 +427,76 @@ main{
   font-family: "Bebas Neue", sans-serif;
   font-size: 2rem;
   letter-spacing: 0.2rem;
+}
+/* BLOQUE SLIDER------------------------------------------------------------ */
+.block-slider{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.slider-img{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url("../images/patioint.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: slide 20s infinite;
+}
+.slider-img::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+@keyframes slide {
+  0%{
+    background-image: url("../images/patioint.jpg")
+  }
+  33%{
+    background-image: url("../images/aula.jpg")
+  }
+  67%{
+    background-image: url("../images/patio.jpg")
+  }
+}
+.slider-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.slider-content h1{
+  font-family: "Anton", sans-serif;
+  color: #E0B80E;
+  font-size: 5vw;
+  letter-spacing: 0.4vw;
+}
+.slider-content h2{
+  font-family: "Alata", sans-serif;
+  color: #E0B80E;
+  font-size: 2.5rem;
+}
+.showmore-btn{
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.showmore-btn span{
+  font-family: "Monserrat", sans-serif;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  text-align:center;
+  color: white;
+  background-color: #3498db;
 }
