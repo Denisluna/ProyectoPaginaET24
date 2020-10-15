@@ -8,11 +8,11 @@ html{
 }
 body{
   font-family: "Monserrat", sans-serif;
+  font-family: "Alata", sans-serif;
   width: 100%;
   height: 100vh;
   overflow: auto;
   background: #dff9fb;
-  font-family: "Monstserrat", sans-serif;
 }
 /*  NAVEGACION DE LA PAGINA ----------------------------------------------------------------------------------------------*/
 
@@ -480,7 +480,7 @@ main{
 .slider-content h2{
   font-family: "Alata", sans-serif;
   color: #E0B80E;
-  font-size: 2.5rem;
+  font-size: 2.5vw;
 }
 .showmore-btn{
   position: absolute;
@@ -499,4 +499,60 @@ main{
   text-align:center;
   color: white;
   background-color: #3498db;
+}
+.block.img-vision{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  perspective: 1px;
+
+}
+
+.img-vision, .img-vision:before{
+  background-size: 50% 50% / cover;
+}
+.img-vision::before{
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  transform-origin: center center 0;
+  position: absolute;
+  display: block;
+  z-index: -1;
+  background-image: url("../images/patio.jpg");
+  background-position: fixed;
+  background-attachment: fixed;
+}
+.marco{
+  height: 100%;
+  width: 100vw;
+  position: relative;
+  float: left;
+}
+.ventana{
+  height: 100%;
+  width: 40vw;
+  position: relative;
+  display: block;
+  float: left;
+  margin-left: 3vw;
+  margin-right: 5vw;
+  margin-top: 10vh;
+  overflow-x: scroll;
+}
+.ventana ul{
+  padding-left: 2vw;
+  list-style-type: circle;
+}
+.ventana li{
+  padding-bottom: 1vh;
+}
+.ventana h2{
+  padding-bottom: 2vh;
 }
