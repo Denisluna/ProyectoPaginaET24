@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 
 router.get('/especialidades',(req, res) => {
   res.render('institucional/especialidades');

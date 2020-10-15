@@ -1,17 +1,57 @@
-const http = require('http');
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const express = require('express');
+const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const bcrypt = require('bcrypt');
-const instRouter = require('./institucionalRouter');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('express-flash')
+const passport = require('passport');
+const addLocalStrategy = require('./localPassport-config')
+
 const app = express();
-const server = http.createServer(app);
 
 const PORT = 8080;
 
-app.set('view engine', 'jade');
+mongoose.connect('mongodb://localhost/ET24', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+        .then(() => console.log('Conectado con MongoDB.'))
+        .catch(err => console.log(err));
 
-app.use(express.urlencoded({extended: false}));
+app.set('view engine', 'jade');
 app.use('/public', express.static('public'));
-app.use('/institucional', instRouter);
+
+app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
+
+app.use(cookieParser(process.env.SECRET));
+app.use(session({
+  secret: process.env.SECRET,
+  resave: true,
+  saveUninitialiazed: true
+}));
+app.use(flash());
+
+
+addLocalStrategy(passport)
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use((req, res, next) => {
+  if(req.isAuthenticated()){
+    res.locals = {
+      user: {
+        hasAdministratorPermissions: req.user.hasAdministratorPermissions
+      }
+    }
+  }
+  next();
+});
+
+app.use('/institucional', require('./routes/institucionalRouter'));
+app.use('/users', require('./routes/authRouter'))
 
 app.get('/',(req, res) => {
   res.render('inicio');
@@ -28,13 +68,7 @@ app.get('/talleres/club-exploradores',(req, res) => {
 app.get('/bi',(req, res) => {
   res.render('bi');
 });
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-app.get('/register', (req, res) => {
-  res.render('register');
-})
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log("server escuchando en el puerto *", PORT);
 });

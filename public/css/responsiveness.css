@@ -16,6 +16,7 @@
     opacity: 1;
     transform: translateY(0);
     transition-delay: .4s;
+    pointer-events: all;
   }
   .show-menu-btn{
     display: inline-block;

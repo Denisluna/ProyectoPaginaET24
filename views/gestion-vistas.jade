@@ -1,0 +1,26 @@
+extends ./layout.jade
+block contenido
+  main(data-barba="container" data-barba-namespace="gestion")
+    .block
+      .form-container
+        h1 Publicar Noticia
+        form.register(action="/app/imagenes" method="POST" enctype="multipart/form-data")
+          .input-row
+            .lb-input  
+              label(for='titulo') Titulo
+            input.form-control(type='text', name='title' placeholder='Ingrese el titulo de la noticia...' id="titulo" required)
+          .input-row
+            .lb-input  
+              label(for='archivo') Imagen de Portada
+            input.form-control(type='file', name='archivo' id="archivo")
+          .input-row
+            .lb-input  
+              label(for='description') Descripción de la Noticia:
+            textarea(name="description" id="description" rows="3")
+          .input-row
+            .lb-input  
+              label(for='markdown') Contenido de la Noticia (Markdown):
+            textarea(name="markdown" id="markdown" rows="5")
+          button.btn(type="submit") Enviar 
+
+    

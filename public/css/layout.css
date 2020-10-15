@@ -7,12 +7,11 @@ html{
   font-size: 100%;
 }
 body{
-  font-family: "Monserrat", sans-serif;
   width: 100%;
   height: 100vh;
   overflow: auto;
   background: #dff9fb;
-  font-family: "Monstserrat", sans-serif;
+  font-family: "Alata", 'Monserrat', sans-serif;
 }
 /*  NAVEGACION DE LA PAGINA ----------------------------------------------------------------------------------------------*/
 
@@ -58,14 +57,14 @@ header a:hover img{
 .nav-link{
   text-decoration: none;
   color: #b1b1b1;
-  font-size: 1rem;
   display: inline-block;
   transition: .3s;
   background: transparent;
   cursor: pointer;
 }
 .main-navigation > .nav-link, .btns-container > .nav-link, .dropdown > .nav-link{
-  font-size: .9rem;
+  font-size: 1rem;
+  line-height: 1rem;
   max-height: 4.0625rem;
   padding:  1.54rem 1.25rem;
   height: 100%;
@@ -73,9 +72,13 @@ header a:hover img{
 .nav-link:hover{
   color: #3498db;
 }
-.nav-link.active{
+.main-navigation > .c-link.active, .main-navigation .dropdown > .c-link.active{
   color: #3498db;
   border-bottom: 4px solid #3498db;
+}
+.dropdown-nav-links > .c-link.active, .res-navigation .c-link.active{
+  color: #3498db;
+  border-left: 4px solid #3498db;
 }
 
 /*  ESTILO CONTAINER DESPLEGABLE ------------------------------------------------------------------------*/
@@ -168,6 +171,8 @@ header a:hover img{
   visibility: hidden;
   transition: visibility 0s .8s;
   overflow-y: hidden;
+  z-index: 10;
+  pointer-events: none;
 }
 .nav-main{
   padding: 1.33rem 0 3rem;
@@ -190,6 +195,7 @@ header a:hover img{
   opacity: 0;
   transform: translateY(-2rem);
   transition: opacity .6s cubic-bezier(.075,.82,.165,1),transform .6s cubic-bezier(.075,.82,.165,1);
+  pointer-events: none;
 }
 
 .res-navigation .nav-content-layout{
@@ -485,18 +491,81 @@ main{
 .showmore-btn{
   position: absolute;
   bottom: 5rem;
+  height: 3rem;
+  width: 3rem;
   left: 50%;
   transform: translateX(-50%);
 }
 .showmore-btn span{
+  display: block;
   font-family: "Monserrat", sans-serif;
   height: 100%;
   width: 100%;
   cursor: pointer;
-  padding: 1rem;
   border-radius: 50%;
   font-size: 1rem;
+  line-height: 3rem;
   text-align:center;
   color: white;
   background-color: #3498db;
+}
+
+.form-container{
+  color: #444;
+  background: #fff;
+  width: 100%;
+  max-width: 540px;
+  padding: 1rem 3rem;
+  font-size: 0.875rem;
+}
+.form-container h1, .form-container a{
+  display: block;
+  margin: 1rem 0;
+  text-align: center;
+}
+.form-container button, .form-container input, .form-container textarea{
+  color: inherit;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+}
+.form-container button{
+  text-transform: uppercase;
+  outline: none;
+  background: #3498db;
+  border: none;
+  color: #FFF;
+}
+.form-container .input-row{
+  margin-bottom: 0.5rem;
+}
+.input-row .lb-input{
+  padding: 0 0 0.5rem 0.5rem;
+}
+.msg{
+  width: 100%;
+  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
+}
+.msg p{
+  display: inline-block;
+}
+.msg p, .msg .close-msg{
+  padding: 0.3125rem 0.625rem;
+}
+.err_c{
+  background: rgba(231, 76, 60, 0.6);
+  border: 1px solid #c0392b;
+  color: #c0392b;
+}
+.scss_c{
+  background: rgba(46, 204, 113, 0.6);
+  border: 1px solid #27ae60;
+  color: #27ae60;
+}
+.msg .close-msg{
+  float: right;
+  cursor: pointer;
 }
