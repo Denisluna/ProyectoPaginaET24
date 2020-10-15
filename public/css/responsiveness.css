@@ -31,9 +31,7 @@
     font-size: 4vw;
     line-height: 9vw;
   }
-  .slider-content h1{
-    font-size: 8vw;
-  }
+
 }
 @media screen and (max-width: 540px) {
   html{
@@ -43,5 +41,8 @@
   .res-navigation .nav-content-layout{
     width: 100%;
     min-width: auto;
+  }
+  .slider-content h1{
+    font-size: 8vw;
   }
 }

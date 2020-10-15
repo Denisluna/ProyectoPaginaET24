@@ -7,12 +7,13 @@ html{
   font-size: 100%;
 }
 body{
+  font-family: "Alata", "Monserrat", sans-serif;
   width: 100%;
   height: 100vh;
   overflow: auto;
   background: #dff9fb;
-  font-family: "Alata", 'Monserrat', sans-serif;
 }
+
 /*  NAVEGACION DE LA PAGINA ----------------------------------------------------------------------------------------------*/
 
 header{
@@ -31,6 +32,7 @@ header{
 }
 
 /*  LOGO DE LA NAVEGACION -------------------------------------------------------------*/
+
 header .logo{
   height: 50px;
 }
@@ -386,23 +388,18 @@ main{
 /* CONTENIDO VISION ---------------------------------------------------------------------------------------*/
 
 .obj-box{
-  width: 350px;
-  height: 350px;
+  width: 20.3125rem;
+  height: 23.75rem;
   text-align: center;
   overflow: hidden;
   position: relative;
-  margin: 1rem;
+  margin: 1.25rem;
   border-radius: 16px;
-  -webkit-box-shadow: 0px 0px 26px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 26px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 26px 2px rgba(0,0,0,0.75);
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+
 }
-.obj-box:hover h1{
-  color: #4848EF;
-}
-.obj-box:hover:before{
-  background-color: rgba(9, 197, 216, 0.7);
-}
+/*
 .obj-box:before{
   content:'';
   position: absolute;
@@ -412,29 +409,66 @@ main{
   left: 0;
   right: 0;
   bottom: 0;
-}
+  height: 50%;
+} */
 .obj-box img{
   width: 100%;
-  height: 100%;
+  height: 55%;
   object-fit: cover;
   z-index: -100;
 }
 .obj-tit{
-  min-width: 80%;
+  width: 20.3125rem;
+  height: 23.75rem;
+  z-index: 100;
+  background-color: #fff;
+  transition: 0.5s;
+  transform: translate(0, -2%);
+}
+.obj-tit i{
   position: absolute;
+  top: -4%;
   left: 50%;
-  top: 50%;
   transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
+  font-size: 1.5625rem;
+  color: white;
 }
 .obj-tit h1{
-  color: #f1f1f1;
+  color: black;
   transition: 0.5s;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: 0.2rem;
+  padding: 0.3125rem 1.25rem;
 }
+.obj-tit p{
+  font-size: 1rem;
+  padding: 0.3125rem 1.25rem;
+  text-align: justify;
+}
+.shadow{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: '';
+  -webkit-box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,1);
+  -moz-box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,1);
+  box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,1);
+  transition: 0.5s;
+}
+.obj-box:hover .obj-tit{
+  transform: translate(0%, -56%);
+}
+.obj-box:hover .shadow{
+  -webkit-box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,0);
+  -moz-box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,0);
+  box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,0);
+}
+
 /* BLOQUE SLIDER------------------------------------------------------------ */
+
 .block-slider{
   width: 100%;
   height: 100%;
@@ -476,17 +510,25 @@ main{
   left: 50%;
   transform: translate(-50%,-50%);
   text-align: center;
+  line-height: 4.5rem;
+}
+.slider-content img{
+  height: 10%;
+  width: 10%;
+  padding-bottom: 2rem;
 }
 .slider-content h1{
-  font-family: "Anton", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   color: #E0B80E;
-  font-size: 5vw;
-  letter-spacing: 0.4vw;
+  font-size: 6rem;
+  letter-spacing: 0.4rem;
+  font-stretch: condensed;
 }
 .slider-content h2{
-  font-family: "Alata", sans-serif;
-  color: #E0B80E;
+  font-family: "Bebas Neue", sans-serif;
+  color: #4848EF;
   font-size: 2.5rem;
+  letter-spacing: 0.15rem;
 }
 .showmore-btn{
   position: absolute;
@@ -507,7 +549,55 @@ main{
   line-height: 3rem;
   text-align:center;
   color: white;
-  background-color: #3498db;
+  background-color: #09C5D8;
+}
+.block.img-vision{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  perspective: 1px;
+}
+.img-vision, .img-vision:before{
+  background-size: 50% 50% / cover;
+}
+.img-vision::before{
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  transform-origin: center center 0;
+  position: absolute;
+  display: block;
+  z-index: -1;
+  background-image: url("../images/patio.jpg");
+  background-position: fixed;
+  background-attachment: fixed;
+}
+.marco{
+  height: 100%;
+  width: 100vw;
+  position: relative;
+  float: left;
+}
+.ventana{
+  height: 100%;
+  width: 40vw;
+  position: relative;
+  display: block;
+  float: left;
+  margin-left: 3vw;
+  margin-right: 5vw;
+  margin-top: 10vh;
+  overflow-x: scroll;
+}
+.ventana ul{
+  padding-left: 2vw;
+  list-style-type: circle;
 }
 
 .form-container{
@@ -569,3 +659,55 @@ main{
   float: right;
   cursor: pointer;
 }
+=======
+.ventana li{
+  padding-bottom: 1vh;
+}
+.ventana h2{
+  padding-bottom: 2vh;
+}
+
+/* VALORES ------------------------------------------------------ */
+
+.val-box{
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin: 1.25rem;
+  border-radius: 16px;
+  transition: 0.5s;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+}
+.val-box:hover{
+  transform: translate(0, -20px);
+  -webkit-box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.75);
+}
+.val-box i{
+  font-size: 6.25rem;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  color: #09C5D8;
+}
+.val-tit{
+  min-width: 95%;
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  transform: translate(-50%, -95%);
+  -webkit-transform: translate(-50%, -95%);
+}
+.val-tit h1{
+  color: black;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+}
+
+/* CONTACTO ----------------------------------------------------- */
