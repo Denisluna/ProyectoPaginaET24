@@ -658,6 +658,7 @@ main{
   color: white;
   background-color: #09C5D8;
 }
+/*------------------------IMAGEN VISION------------------------*/
 .block.img-vision{
   width: 100%;
   height: 100%;
@@ -685,28 +686,7 @@ main{
   background-position: fixed;
   background-attachment: fixed;
 }
-.marco{
-  height: 100%;
-  width: 100vw;
-  position: relative;
-  float: left;
-}
-.ventana{
-  height: 100%;
-  width: 40vw;
-  position: relative;
-  display: block;
-  float: left;
-  margin-left: 3vw;
-  margin-right: 5vw;
-  margin-top: 10vh;
-  overflow-x: scroll;
-}
-.ventana ul{
-  padding-left: 2vw;
-  list-style-type: circle;
-}
-
+/*-----------------------------------------------------------------*/
 .form-container{
   color: #444;
   background: #fff;
@@ -817,3 +797,95 @@ main{
 }
 
 /* CONTACTO ----------------------------------------------------- */
+
+
+/* ESPECIALIDADES ----------------------------------------------------- */
+.block-esp{
+  height: auto;
+  width: 100%;
+}
+.especialidad{
+  margin: -21.875rem auto 4rem auto;
+  text-align: justify;
+  width: 100%;
+  max-width: 950px;
+  display: block;
+  position: relative;
+  background-color: #F9F9F9;
+}
+.especialidad-content{
+  padding: 4rem 1.5rem 2rem 1.5rem;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+  .especialidad h1{
+    text-align: center;
+    padding-top: 1rem;
+    text-transform: uppercase;
+  }
+  .especialidad p{
+    padding: 2rem 0;
+
+  }
+  .especialidad h2{
+    text-align: center;
+    text-decoration: underline;
+  }
+  .especialidad li{
+  padding-top: 1rem;
+  }
+
+  .especialidad span{
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    font-family: "Alata", sans-serif;
+    height: 100%;
+    width: 100%;
+    max-width: 150px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 1.3rem;
+    vertical-align: middle;
+    text-align:center;
+    color: white;
+    background-color: #09C5D8;
+  }
+  .circle-c{
+    position: absolute;
+    width: 950px;
+    height: 475px;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .circle-c span{
+    display: block;
+    margin-bottom: 0px;
+    border-radius: 50%;
+    width: 950px;
+    height: 950px;
+    background: linear-gradient(180deg, #66A3FF 0%, rgba(223, 249, 251, 0) 77.6%);
+    left: -10%;
+
+
+  }
+
+.img-especialidad{
+  position: relative;
+
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+    .img-especialidad img{
+      position: absolute;
+      border-radius: 50%;
+      width: 2160px;
+      height: auto;
+      transform: translateX(-50%);
+      left: 50%;
+      top: -900px;
+
+    }
