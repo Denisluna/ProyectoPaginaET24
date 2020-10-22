@@ -645,6 +645,7 @@ main{
   left: 50%;
   transform: translateX(-50%);
 }
+
 .showmore-btn span{
   display: block;
   font-family: "Monserrat", sans-serif;
