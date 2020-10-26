@@ -10,38 +10,17 @@ $(function(){
     $(`a.c-link[href="${window.location.pathname}"]`).addClass('active');
     if($(`a.c-link[href="${window.location.pathname}"]`).parents('.dropdown').length > 0){
       $('.dropdown > .nav-link').addClass('active');
+      if($(`a.c-link[href="${window.location.pathname}"]`).parents('.sub-dropdown').length > 0){
+        $('.sub-dropdown > .nav-link').addClass('active');
+      }
     }
   }
 
-  // $(document).mouseup(function(e){
-  //   let dropMenu = $(".dropdown-content");
-  //
-  //   if(!dropMenu.is(e.target) && dropMenu.has(e.target).length === 0 && !$('.dropdown span, .dropdown span i').is(e.target)){
-  //       dropMenu.removeClass('show');
-  //   }
-  // });
-  // $('body').on('click', '.dropdown', function(e){
-  //   if($(this).children('.dropdown-content.show').length > 0){
-  //     $('.dropdown-content').removeClass('show');
-  //   }else {
-  //     $('.dropdown-content').removeClass('show');
-  //     $(this).children('.dropdown-content').addClass('show');
-  //   }
-  // });
-
   $('body').on('click', '.show-menu-btn', function(e){
-    if($('.res-navigation.show').length > 0){
-      $('.res-navigation').removeClass('show');
-    }else {
-      $('.res-navigation').addClass('show');
-    }
-  });
-
-  $('body').on('click', 'a.c-link', function(e){
-    $('.active').removeClass('active');
-    $(this).addClass('active');
-    if($(this).parents('.dropdown').length > 0){
-      $('.dropdown > .nav-link').addClass('active');
+    if($('html').hasClass('res-navigation-open')){
+      $('html').removeClass('res-navigation-open');
+    }else{
+      $('html').addClass('res-navigation-open');
     }
   });
 
@@ -50,6 +29,16 @@ $(function(){
   });
   $('body').on('click', '.close-btn', function(){
     $('html').removeClass('contact-show');
+  });
+
+  $('body').on('click', '.p-item-title', function(e){
+    if($(this).hasClass('show')){
+      $('.p-item-title').removeClass('show');
+    }else{
+      $('.p-item-title').removeClass('show');
+      $(this).toggleClass('show');
+    }
+    e.stopPropagation();
   });
 
 });
