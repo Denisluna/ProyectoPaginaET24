@@ -139,7 +139,6 @@ header a:hover img{
 
 /*  FIN ESTILO CONTAINER --------------------------------------------------------------------------*/
 
-
 /*  ESTILO LINKS DE NAVEGACION ----------------------------------------------------------------------------------------------*/
 
 /* .contact-btn{
@@ -199,12 +198,10 @@ header a:hover img{
   transition: opacity .6s cubic-bezier(.075,.82,.165,1),transform .6s cubic-bezier(.075,.82,.165,1);
   pointer-events: none;
 }
-
 .res-navigation .nav-content-layout{
   width: 40%;
   min-width: 320px;
 }
-
 .res-navigation .nav-content-layout a{
   display: block;
   font-size: 1.2rem;
@@ -302,6 +299,14 @@ main{
   justify-content: center;
   align-items: center;
 }
+#color1{
+  background-color: #0AD4EB;
+  color: white;
+}
+#color2{
+  background-color: #5656F0;
+  color: white;
+}
 .row{
   width: 100%;
   max-width: 980px;
@@ -353,7 +358,6 @@ main{
   z-index: 5;
 }
 .card-c{
-  background: #fff;
   position: absolute;
   top: 0;
   left: 0;
@@ -371,6 +375,7 @@ main{
   z-index: 7;
 }
 .card-c button{
+  color: white;
   outline: none;
   border: 1px solid #d1d1d1;
   background: transparent;
@@ -397,7 +402,6 @@ main{
   border-radius: 16px;
   background-color: #fff;
   border: 1px solid #d1d1d1;
-
 }
 /*
 .obj-box:before{
@@ -532,7 +536,7 @@ main{
 }
 .showmore-btn{
   position: absolute;
-  bottom: 5rem;
+  bottom: 8%;
   height: 3rem;
   width: 3rem;
   left: 50%;
@@ -559,6 +563,12 @@ main{
   transform-style: preserve-3d;
   overflow: hidden;
   perspective: 1px;
+}
+.img-vision .content-desc{
+  padding-top: 40px;
+  -webkit-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.75);
 }
 .img-vision, .img-vision:before{
   background-size: 50% 50% / cover;
@@ -599,7 +609,6 @@ main{
   padding-left: 2vw;
   list-style-type: circle;
 }
-
 .form-container{
   color: #444;
   background: #fff;
@@ -659,7 +668,6 @@ main{
   float: right;
   cursor: pointer;
 }
-=======
 .ventana li{
   padding-bottom: 1vh;
 }
@@ -710,4 +718,117 @@ main{
   letter-spacing: 0.3rem;
 }
 
-/* CONTACTO ----------------------------------------------------- */
+/* EQUIPO DOCENTE ----------------------------------------------------- */
+
+  .container{
+    padding: 120px 140px 60px 140px;
+    background-image: url("../images/4k.png");
+    background-size: cover;
+  }
+  .container-content{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 70px 0 70px 0;
+  }
+  .container h1{
+    font-family: "Bebas Neue";
+    font-size: 50px;
+    letter-spacing: 8px;
+    text-align: center;
+  }
+  .container h2{
+    font-family: "Bebas Neue";
+    font-size: 25px;
+    letter-spacing: 5px;
+    padding: 40px 0 5px 30px;
+  }
+  .container hr{
+    margin: 0 30px 45px 30px;
+  }
+  .equipo-d{
+    margin: 30px 50px 35px 50px;
+  }
+  .cards-equipo{
+    background-color: #EFEFEF;
+    height: 120px;
+    width: 240px;
+    border-radius: 20px;
+    position: relative;
+  }
+  .cards-equipo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #09C5D8;
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    transition: 0.4s;
+  }
+  .cards-equipo h3{
+    font-family: "Anton";
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #E0B80E;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .cards-equipo p{
+    font-family: "Anton";
+    font-size: 24px;
+    text-align: center;
+  }
+  .cards-equipo-cont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 80%;
+  }
+  .dept{
+    margin-bottom: 40px;
+  }
+  .dept h3{
+    font-family: "Bebas Neue";
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  .dept p{
+    font-family: "Anton";
+    font-size: 18px;
+    padding: 5px 20px 5px 20px;
+  }
+  #blue{
+    color: #4848EF;
+  }
+  .list-dept{
+    width: 425px;
+    margin: 0px 0 10px 0;
+    display: flex;
+    position: relative;
+    background-color: #EFEFEF;
+  }
+  .list-dept::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #09C5D8;
+    height: 100%;
+    width: 0%;
+    transition: 0.4s;
+  }
+  .list-dept:hover:before, .cards-equipo:hover:before{
+    width: 100%;
+    color: yellow;
+  }
+  .list-dept-cont{
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
