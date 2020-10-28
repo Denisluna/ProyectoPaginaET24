@@ -427,7 +427,8 @@ ul.rows-c li{
   display: block;
   transform: scaleX(0);
   background: #fff;
-  height: 20%;
+  height: 21%;
+  pointer-events: all;
 }
 
 /* FIN DE LA TRANSICION DE PAGINA ----------------------------------------------------------------------------------------------*/
@@ -465,71 +466,6 @@ main{
   align-items: center;
   justify-content: space-around;
 }
-.card{
-  min-height: 250px;
-  max-width: 400px;
-  max-height: 300px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid #d1d1d1;
-  cursor: pointer;
-  margin-bottom: 2rem;
-  margin: .5rem;
-}
-.card-img{
-  position: relative;
-}
-.card-img img{
-  width: 100%;
-  /* filter: blur(2px); */
-  height: auto;
-  object-fit: cover;
-}
-.card-img h1{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 3rem;
-  letter-spacing: 0.4rem;
-  color: #fff;
-  z-index: 5;
-}
-.card-c{
-  background: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transform: translateX(-100%);
-  transition: .5s;
-  padding: 1rem;
-  text-align: justify;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  cursor: default;
-  z-index: 7;
-}
-.card-c button{
-  outline: none;
-  border: 1px solid #d1d1d1;
-  background: transparent;
-  padding: .5rem 7rem;
-  cursor: pointer;
-}
-.title{
-  text-align: center;
-  padding: 0 0 1rem 0;
-}
-.card:hover .card-c{
-  transform: translateX(0%);
-}
-
 /* CONTENIDO VISION ---------------------------------------------------------------------------------------*/
 
 .obj-box{
@@ -538,39 +474,28 @@ main{
   text-align: center;
   overflow: hidden;
   position: relative;
-  margin: 1.25rem;
+  margin: .5rem;
   border-radius: 16px;
   background-color: #fff;
   border: 1px solid #d1d1d1;
-
+  z-index: 5;
 }
-/*
-.obj-box:before{
-  content:'';
-  position: absolute;
-  background-color: rgba(9, 197, 216, 0.5);
-  transition: 0.5s;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 50%;
-} */
 .obj-box img{
   width: 100%;
   height: 55%;
   object-fit: cover;
-  z-index: -100;
 }
 .obj-tit{
-  width: 20.3125rem;
-  height: 23.75rem;
-  z-index: 100;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   transition: 0.5s;
-  transform: translate(0, -2%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(50%);
 }
-.obj-tit i{
+.obj-tit > i{
   position: absolute;
   top: -4%;
   left: 50%;
@@ -592,24 +517,20 @@ main{
   text-align: justify;
 }
 .shadow{
-  position: absolute;
   width: 100%;
-  height: 100%;
-  top: 0;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
   left: 0;
   content: '';
-  -webkit-box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,1);
-  -moz-box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,1);
-  box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,1);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1) 100%);
   transition: 0.5s;
 }
 .obj-box:hover .obj-tit{
-  transform: translate(0%, -56%);
+  transform: translateY(0);
 }
 .obj-box:hover .shadow{
-  -webkit-box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,0);
-  -moz-box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,0);
-  box-shadow: inset 0px -61px 40px -25px rgba(255,255,255,0);
+  display: none;
 }
 
 /* BLOQUE SLIDER------------------------------------------------------------ */
@@ -687,7 +608,6 @@ main{
 
 .showmore-btn span{
   display: block;
-  font-family: "Monserrat", sans-serif;
   height: 100%;
   width: 100%;
   cursor: pointer;
@@ -713,16 +633,16 @@ main{
 }
 .img-vision::before{
   content: "";
+  display: block;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-size: cover;
-  transform-origin: center center 0;
-  position: absolute;
-  display: block;
   z-index: -1;
+  transform-origin: center center 0;
   background-image: url("../images/patio.jpg");
+  background-size: cover;
   background-position: fixed;
   background-attachment: fixed;
 }
@@ -731,9 +651,8 @@ main{
   color: #444;
   background: #fff;
   width: 100%;
-  max-width: 540px;
-  padding: 1rem 3rem;
-  font-size: 0.875rem;
+  max-width: 500px;
+  padding: 1rem;
 }
 .form-container h1, .form-container a{
   display: block;
@@ -840,113 +759,76 @@ main{
 
 
 /* ESPECIALIDADES ----------------------------------------------------- */
-.block-esp{
-  height: auto;
-  width: 100%;
-}
-.especialidad-layout{
-  margin: -21.875rem auto 4rem auto;
-}
-.container{
-  text-align: justify;
-  width: 100%;
-  max-width: 950px;
-  display: block;
-  position: relative;
-  background-color: #fff;
+.cards-container.esp-layout{
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 0;
 }
 .container-content{
-  padding: 4rem 1.5rem 2rem 1.5rem;
+  padding: 4rem 1rem;
   width: 100%;
-  max-width: 750px;
   margin: 0 auto;
+  color: #464646;
+  text-align: justify;
 }
-  .container h1{
-    text-align: center;
-    padding-top: 1rem;
-    text-transform: uppercase;
+  .container-content .container-content{
+    padding: 0;
   }
-  .container p{
-    padding: 2rem 0;
-
-  }
-  .especialidad-layout h2{
-    text-align: center;
-    text-decoration: underline;
-  }
-  .container li{
-  padding-top: 1rem;
-  }
-
-  .container .c-btn{
-    margin-bottom: 2rem;
-    position: relative;
-    display: inline-block;
-    font-family: "Alata", sans-serif;
-    height: 100%;
-    width: 100%;
-    max-width: 150px;
-    cursor: pointer;
-    border-radius: 25px;
-    font-size: 1.3rem;
-    vertical-align: middle;
-    text-align:center;
-    color: white;
-    background-color: #09C5D8;
-  }
-  .circle-c{
-    position: absolute;
-    width: 950px;
-    height: 475px;
-    bottom: 0;
-    z-index: -1;
-    overflow: hidden;
-  }
-  .circle-c span{
-    display: block;
-    margin-bottom: 0px;
-    border-radius: 50%;
-    width: 950px;
-    height: 950px;
-    background: linear-gradient(180deg, #66A3FF 0%, rgba(223, 249, 251, 0) 77.6%);
-    left: -10%;
-  }
-
-.img-especialidad{
-  position: relative;
-
-  height: 100vh;
+.container-content.hlf-width{
+  max-width: 600px;
+}
+.hlf-width img{
   width: 100%;
+}
+  .esp-layout p{
+    padding: 2rem 0 1rem 0;
+  }
+  .container-content ul{
+    list-style: none;
+  }
+    .container-content li{
+      background: #f4f4f4;
+      padding: 1rem;
+      margin-bottom: 0.625rem;
+      border-left: 5px solid #E0B80E;
+    }
+    .c-btn{
+      text-decoration: none;
+      display: inline-block;
+      margin: 1rem 0 4rem 0;
+      padding: 0.625rem 3rem;
+      background-color: #09C5D8;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 25px;
+      text-transform: uppercase;
+    }
+.img-especialidad{
+  /* position: relative; */
+  height: 100%;
+  max-height: 520px;
+  width: 100%;
+  background-image: url('../images/gabinete.jpg');
+  background-size: cover;
+  background-position: 0% 70%;
   overflow: hidden;
 }
-    .img-especialidad img{
-      position: absolute;
-      border-radius: 50%;
-      width: 2160px;
-      height: auto;
-      transform: translateX(-50%);
-      left: 50%;
-      top: -900px;
-    }
 /* PROYECTOS ESCOLARES ----------------------------------------------------- */
-
-  .container-content{
-    color: #464646;
-    background: #fff;
+  .container-content.ttl-width{
+    max-width: 950px;
   }
   .container-content.p-layout{
     margin-top: 4.0625rem;
   }
-  .container-content .p-section{
-    padding-bottom: 3rem;
-  }
-    .p-section h2.p-title{
-      text-align: left;
+    h2.p-title, h1.p-title{
       text-transform: uppercase;
       font-family: 'Anton', sans-serif;
-      padding-bottom: 1rem;
+      padding: 2rem 1rem;
       margin-bottom: 0.625rem;
       letter-spacing: 0.25rem;
+      text-align: center;
+      color: #464646;
     }
       .p-item-title{
         width: 100%;
