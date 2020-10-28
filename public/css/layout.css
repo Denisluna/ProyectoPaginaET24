@@ -754,7 +754,7 @@ main{
   font-size: 2rem;
   letter-spacing: 0.3rem;
 }
-
+container
 /* CONTACTO ----------------------------------------------------- */
 
 
@@ -896,3 +896,51 @@ main{
           .item-content i{
             padding-left: 1rem;
           }
+
+/*-------------------- BACHILLERATO INTERNACIONAL ---*/
+.title-bi{
+  height: 50%;
+  width: 100%;
+  background-color: #09C5D8;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 4.0625rem
+}
+.title-bi h1{
+  font-family: "Anton";
+  font-size: 4rem;
+  letter-spacing: 0,4rem;
+  color: #fff;
+}
+.block-bi{
+  display: block;
+  position: relative;
+  height: 50%;
+  width: 50%;
+  float: left;
+}
+.block-bi h2{
+  padding: 2rem 3rem;
+  text-align: center;
+}
+.block-bi p{
+  padding: 2rem 4rem 0rem 4rem;
+  text-align: justify;
+}
+.block-bi ul{
+  padding: 1rem 5rem 1rem 4rem;
+}
+.block-bi li{
+  padding-bottom: 1rem;
+  text-align: justify;
+}
+@supports(object-fit: cover){
+    .block-bi img{
+      padding: 2rem 0;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+}
