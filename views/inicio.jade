@@ -13,39 +13,37 @@ block contenido
           span Defensa de Buenos Aires
       .showmore-btn
         span #[i.fas.fa-chevron-down]
-    #color1.block
+    .block
       .content-desc.row
         h1.title ¿Que caminos ofrecemos?
         p En la Escuela Técnica 24, les ofrecemos a los alumnos la posibilidad de elegir su tecnicatura a cursar a partir del 3° año, ya habiendo transitado el Ciclo Básico, que les brindará una introducción a cada especialidad y los ayudará a decidir de que manera desean continuar el desarrollo de su educación.
         p Estos son los dos caminos que todo alumno podrá tomar:
-
-      .cards-container.row
-        .card
-          .card-img#inf-img
+      .cards-container.center-items
+        .obj-box
+          img(src="./public/images/gabinete.jpg", alt="Estudiantes")
+          .obj-tit
+            i(class="fas fa-angle-up")
             h1 Computación
-            img(src="../public/images/gabinete.jpg")
-          .card-c#color2
-            h1 Computación
-            p Con esta especialidad, el alumno se adentrara en el mundo de la tecnología y del mañana, enseñándoles desde lo más básico (pseudolenguajes de programación, manejo de variables, condicionales básicos, entre otros) hasta lo más profesional (programación orientada a objetos, robotica, análisis de sistemas, entre otros).
-            button(type="button") Ver mas #[i.fas.fa-chevron-down]
-        .card
-          .card-img#ade-img
+            p Con esta especialidad, el alumno se adentrara en el mundo de la tecnología, al mundo del mañana, enseñándoles desde lo más básico (pseudolenguajes de programación, manejo de variables, condicionales básico, entre otros) hasta lo más profesional (programación orientada a objetos, robotica, análisis de sistemas, entre otros)
+            a.c-btn(href="/institucional/especialidades/computacion") Ver mas
+          .shadow
+        .obj-box
+          img(src="./public/images/aula.jpg", alt="Abolición al machismo")
+          .obj-tit
+            i(class="fas fa-angle-up")
             h1 A.D.E.
-            img(src="../public/images/aula.jpg")
-          .card-c#color2
-            h1 A.D.E.
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.nt, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            button(type="button") Ver mas #[i.fas.fa-chevron-down]
+            p La administración de empresas  es la disciplina de gestión eficiente y dinámica de los recursos de una institución empresarial para lograr y mantener la sostenibilidad de su crecimiento. Es una disciplina transversal que prepara a sus estudiantes para el manejo y compresión de las situaciones administrativas, financieras, económicas y laborales.
+            a.c-btn(href="/institucional/especialidades/ade") Ver mas
+          .shadow
     .block.img-vision
       #color2.content-desc.row
         h1.title ¿Cual es nuestra visión?
         p Durante 73 años, buscamos no solo enseñar los valores que toda persona debe tener, tales como responsabilidad, generosidad, compromiso, honestidad, entre otros, sino que también nos enfocamos en preparar de la mejor manera a nuestro futuro, los alumnos. Queremos que cuando el alumno finalize su camino por la E.T. 24 haya aprendido todo lo necesario para enfrentar el mundo del mañana y encaminarse a las nuevas etapas que se aproximan.
-
-    #color1.block
+    .block
       .content-desc.row
         h1.title ¿Cuales son nuestros objetivos?
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
-      .cards-container
+      .cards-container.center-items
         .obj-box
           img(src="./public/images/estudiantes.jpg", alt="Estudiantes")
           .obj-tit
@@ -67,12 +65,12 @@ block contenido
             h1 Lorem ipsum dolor sit consectetur adipisicing
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. LOLDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
           .shadow
-    #color2.block
+    .block
       .content-desc.row
         h1.title ¿Que valores comparte nuestra institucion?
         p Consideramos que tanto el equipo docente, como los alumnos, deben compartir una serie de valores para convivir en un ámbiente donde puedan sentirse seguros y en paz. Sin lugar a dudas, el transitar de la educación se vuelve mucho mas ameno y efectivo cuando estos se cumplen. 
         p Estos son los valores que fomentamos y con los que formaremos a los estudiantes para que logren tener una incersión eficaz en la sociedad:
-      .cards-container
+      .cards-container.center-items
         .val-box
           .obj.box
             .val-tit

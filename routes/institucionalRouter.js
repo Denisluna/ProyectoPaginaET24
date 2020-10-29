@@ -1,7 +1,10 @@
 const router = require('express').Router();
 
-router.get('/especialidades',(req, res) => {
-  res.render('institucional/especialidades');
+router.get('/especialidades/computacion',(req, res) => {
+  res.render('institucional/especialidades/computacion');
+});
+router.get('/especialidades/ade',(req, res) => {
+  res.render('institucional/especialidades/ADE');
 });
 router.get('/proyectos-escolares',(req, res) => {
   res.render('institucional/proy');
