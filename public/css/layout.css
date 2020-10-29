@@ -407,6 +407,7 @@ aside.contact{
   height: 100vh;
   pointer-events: none;
 }
+
 .page-transition img{
   position: absolute;
   top: 50%;
@@ -418,16 +419,18 @@ aside.contact{
   height: auto;
   z-index: 20;
 }
+
 ul.rows-c{
   width: 100%;
   height: 100%;
   list-style: none;
 }
+
 ul.rows-c li{
   display: block;
   transform: scaleX(0);
   background: #fff;
-  height: 21%;
+  height: 22%;
   pointer-events: all;
 }
 
@@ -463,6 +466,8 @@ main{
   margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
+}
+.cards-container.center-items{
   align-items: center;
   justify-content: space-around;
 }
@@ -777,7 +782,7 @@ container
 .container-content.hlf-width{
   max-width: 600px;
 }
-.hlf-width img{
+.hlf-width img.svg{
   width: 100%;
 }
   .esp-layout p{
@@ -913,34 +918,10 @@ container
   letter-spacing: 0,4rem;
   color: #fff;
 }
-.block-bi{
-  display: block;
-  position: relative;
-  height: 50%;
-  width: 50%;
-  float: left;
-}
-.block-bi h2{
-  padding: 2rem 3rem;
+img.bi-logo{
   text-align: center;
-}
-.block-bi p{
-  padding: 2rem 4rem 0rem 4rem;
-  text-align: justify;
-}
-.block-bi ul{
-  padding: 1rem 5rem 1rem 4rem;
-}
-.block-bi li{
-  padding-bottom: 1rem;
-  text-align: justify;
-}
-@supports(object-fit: cover){
-    .block-bi img{
-      padding: 2rem 0;
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      object-position: center center;
-    }
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
 }
