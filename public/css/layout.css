@@ -909,17 +909,24 @@ main{
   color: #464646;
   text-align: justify;
 }
-  .container-content .container-content{
-    padding: 0;
-  }
+.container-content.ttl-width{
+  max-width: 950px;
+}
 .container-content.hlf-width{
   max-width: 600px;
 }
+.container-content.min-width{
+  max-width: 450px;
+}
+  .container-content .container-content{
+    padding: 0;
+  }
+
 .hlf-width img.svg{
   width: 100%;
 }
   .esp-layout p{
-    padding: 2rem 0 1rem 0;
+    padding: .5rem 0 1rem 0;
   }
   .container-content ul{
     list-style: none;
@@ -929,6 +936,9 @@ main{
       padding: 1rem;
       margin-bottom: 0.625rem;
       border-left: 5px solid #E0B80E;
+    }
+    .container-content li span{
+      float: right;
     }
     .c-btn{
       text-decoration: none;
@@ -953,13 +963,11 @@ main{
   overflow: hidden;
 }
 /* PROYECTOS ESCOLARES ----------------------------------------------------- */
-  .container-content.ttl-width{
-    max-width: 950px;
-  }
+
   .container-content.p-layout{
     /* margin-top: 4.0625rem; */
   }
-    h2.p-title, h1.p-title{
+    h3.p-title, h2.p-title, h1.p-title{
       text-transform: uppercase;
       font-family: 'Anton', sans-serif;
       padding: 2rem 1rem;
@@ -993,15 +1001,21 @@ main{
           width: 70px;
           background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1) 100%);
         }
-        .p-item-title:hover span{
+        .p-item-title:not(.show):hover span{
           transform: translateX(0.625rem);
           color: #E0B80E;
         }
         .p-item-title i{
           font-size: 2rem;
-          transform: rotate(45deg);
           float: right;
           color: #E0B80E;
+        }
+        .p-item-title i.fa-times-circle{
+          transform: rotate(45deg);
+        }
+        .p-item-title i.fa-minus-circle{
+          display: none;
+          color: #09C5D8;
         }
       .p-section .list-item-container{
         width: 100%;
@@ -1022,6 +1036,16 @@ main{
       .p-item-title.show + .list-item-container .item-content{
         opacity: 1;
         transform: translateY(0);
+      }
+      .p-item-title.show span{
+        transform: translateX(0.625rem);
+        color: #09C5D8;
+      }
+      .p-item-title.show i.fa-times-circle{
+        display: none;
+      }
+      .p-item-title.show i.fa-minus-circle{
+        display: block;
       }
         .item-content{
           padding: 1rem;

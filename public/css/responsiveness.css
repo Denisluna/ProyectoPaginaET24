@@ -53,4 +53,10 @@
     width: 100%;
     min-width: auto;
   }
+  .slider-content h1{
+    font-size: 12vw;
+  }
+  .block .content-desc p{
+    text-align: justify;
+  }
 }

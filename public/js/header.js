@@ -38,6 +38,7 @@ $(function(){
       $('.p-item-title').removeClass('show');
       $(this).toggleClass('show');
     }
+
     e.stopPropagation();
   });
 
