@@ -794,30 +794,25 @@ main{
 
 /* EQUIPO DOCENTE ----------------------------------------------------- */
 
-  .container h1{
-    font-family: "Bebas Neue";
-    font-size: 50px;
-    letter-spacing: 8px;
-    text-align: center;
-  }
-  .container h2{
+  .container-content h2{
     font-family: "Bebas Neue";
     font-size: 25px;
     letter-spacing: 5px;
-    padding: 40px 0 5px 30px;
+    padding: 0px 0 5px 30px;
   }
-  .container hr{
+  .container-content hr{
     margin: 0 30px 45px 30px;
   }
   .equipo-d{
-    margin: 30px 50px 35px 50px;
+    margin-bottom: 75px;
   }
   .cards-equipo{
     background-color: #EFEFEF;
-    height: 120px;
-    width: 240px;
+    height: 14.286rem;
+    width: 18.571rem;
     border-radius: 20px;
     position: relative;
+    margin: auto;
   }
   .cards-equipo::before{
     content: '';
@@ -840,8 +835,17 @@ main{
   }
   .cards-equipo p{
     font-family: "Anton";
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
+  }
+  .cards-equipo i{
+    color: #E0B80E;
+  }
+  .docente{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
   .cards-equipo-cont{
     position: absolute;
@@ -851,7 +855,8 @@ main{
     min-width: 80%;
   }
   .dept{
-    margin-bottom: 40px;
+    margin: auto;
+    margin-bottom: 30px;
   }
   .dept h3{
     font-family: "Bebas Neue";
