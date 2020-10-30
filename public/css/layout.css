@@ -761,7 +761,7 @@ main{
   border-radius: 16px;
   transition: 0.5s;
   background-color: #fff;
-  border: 1px solid #d1d1d1;
+  border: 1.5px solid #E0B80E;
 }
 .val-box:hover{
   transform: translate(0, -20px);
@@ -957,7 +957,7 @@ main{
     max-width: 950px;
   }
   .container-content.p-layout{
-    margin-top: 4.0625rem;
+    /* margin-top: 4.0625rem; */
   }
     h2.p-title, h1.p-title{
       text-transform: uppercase;
@@ -1046,9 +1046,10 @@ main{
   padding-top: 4.0625rem
 }
 .title-bi h1{
-  font-family: "Anton";
+  text-transform: uppercase;
+  font-family: 'Anton', sans-serif;
   font-size: 4rem;
-  letter-spacing: 0,4rem;
+  letter-spacing: 0.3rem;
   color: #fff;
 }
 img.bi-logo{
