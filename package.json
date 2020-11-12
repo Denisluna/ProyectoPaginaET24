@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Denis Luna, Lucas De La pina, Nahuel Serruya, Lucas Gonzalez",
+  "author": "Denis Luna, Lucas De La Pina, Nahuel Serruya, Lucas Gonzalez",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",

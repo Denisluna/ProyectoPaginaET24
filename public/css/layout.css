@@ -501,6 +501,7 @@ main{
 }
 .content-desc p{
   padding: 0 3rem;
+  font-size: 17px;
 }
 .cards-container{
   margin-top: 1.5rem;
@@ -511,15 +512,41 @@ main{
   align-items: center;
   justify-content: space-around;
 }
-/* CONTENIDO VISION ---------------------------------------------------------------------------------------*/
 
+/* CAMINOS ---------------------------------------------------------------------------------------*/
+
+#caminos-box{
+  width: 25.714rem;
+  margin: 1.25rem 2.5rem;
+}
+#caminos-box img{
+  height: 100%;
+}
+#caminos-tit{
+  transform: translateY(100%);
+}
+.obj-box:hover #caminos-tit{
+  transform: translateY(0);
+}
+#caminos-cont{
+  font-size: 45px;
+}
+#caminos-p{
+  font-size: 16px;
+}
+
+/* OBJETIVOS -------------------------------------------------------------------------------------*/
+
+#border{
+  border-bottom: 3px #09C5D8 solid;
+}
 .obj-box{
   width: 20.3125rem;
   height: 23.75rem;
   text-align: center;
   overflow: hidden;
   position: relative;
-  margin: .5rem;
+  margin: 1.25rem .5rem;
   border-radius: 16px;
   background-color: #fff;
   border: 1.5px solid #E0B80E;
@@ -529,6 +556,9 @@ main{
   width: 100%;
   height: 55%;
   object-fit: cover;
+}
+#zoom{
+  transform: scale(1.3);
 }
 .obj-tit{
   width: 100%;
@@ -651,7 +681,6 @@ main{
   left: 50%;
   transform: translateX(-50%);
 }
-
 .showmore-btn span{
   display: block;
   height: 100%;
@@ -664,7 +693,9 @@ main{
   color: white;
   background-color: #09C5D8;
 }
+
 /*------------------------IMAGEN VISION------------------------*/
+
 .block.img-vision{
   width: 100%;
   height: 100%;
@@ -680,6 +711,7 @@ main{
   -moz-box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.75);
   background-color: white;
+  border: 2px #E0B80E solid;
 }
 .img-vision, .img-vision:before{
   background-size: 50% 50% / cover;
@@ -720,8 +752,11 @@ main{
   padding-left: 2vw;
   list-style-type: circle;
 }
+#tit-vis{
+  padding: 0 0 2rem 0;
+}
 
-/* Formulario --------------------------------------------------------------------------------*/
+/* FORMULARIO --------------------------------------------------------------------------------*/
 
 .form-container{
   color: #444;
@@ -834,114 +869,127 @@ main{
 
 /* EQUIPO DOCENTE ----------------------------------------------------- */
 
-  .container-content h2{
-    font-family: "Bebas Neue";
-    font-size: 25px;
-    letter-spacing: 5px;
-    padding: 0px 0 5px 30px;
-  }
-  .container-content hr{
-    margin: 0 30px 45px 30px;
-  }
-  .equipo-d{
-    margin-bottom: 75px;
-  }
-  .cards-equipo{
-    background-color: #EFEFEF;
-    height: 14.286rem;
-    width: 18.571rem;
-    border-radius: 20px;
-    position: relative;
-    margin: auto;
-  }
-  .cards-equipo::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #09C5D8;
-    height: 100%;
-    width: 0%;
-    border-radius: 20px;
-    transition: 0.4s;
-  }
-  .cards-equipo h3{
-    font-family: "Anton";
-    font-size: 24px;
-    letter-spacing: 2px;
-    color: #E0B80E;
-    text-align: center;
-    padding-bottom: 15px;
-  }
-  .cards-equipo p{
-    font-family: "Anton";
-    font-size: 20px;
-    text-align: center;
-  }
-  .cards-equipo i{
-    color: #E0B80E;
-  }
-  .docente{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-  .cards-equipo-cont{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 80%;
-  }
-  .dept{
-    margin: auto;
-    margin-bottom: 30px;
-  }
-  .dept h3{
-    font-family: "Bebas Neue";
-    font-size: 22px;
-    letter-spacing: 1px;
-    padding-bottom: 15px;
-    text-align: center;
-  }
-  .dept p{
-    font-family: "Anton";
-    font-size: 18px;
-    padding: 5px 20px 5px 20px;
-  }
-  #blue{
-    color: #4848EF;
-  }
-  .list-dept{
-    width: 425px;
-    margin: 0px 0 10px 0;
-    display: flex;
-    position: relative;
-    background-color: #EFEFEF;
-  }
-  .list-dept::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #09C5D8;
-    height: 100%;
-    width: 0%;
-    transition: 0.4s;
-  }
-  .list-dept:hover:before, .cards-equipo:hover:before{
-    width: 100%;
-    color: yellow;
-  }
-  .list-dept-cont{
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
+.container-content h2{
+  font-family: "Bebas Neue";
+  font-size: 25px;
+  letter-spacing: 5px;
+  padding: 0px 0 5px 30px;
+}
+.container-content hr{
+  margin: 0 30px 45px 30px;
+}
+.equipo-d{
+  margin-bottom: 75px;
+}
+.cards-equipo{
+  background-color: #EFEFEF;
+  height: 14.286rem;
+  width: 18.571rem;
+  border-radius: 20px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 35px;
+}
+.cards-equipo::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #09C5D8;
+  height: 100%;
+  width: 0%;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+.cards-equipo h3{
+  font-family: "Anton";
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #E0B80E;
+  text-align: center;
+  padding-bottom: 15px;
+  transition: 0.5s;
+}
+.cards-equipo p{
+  font-family: "Anton";
+  font-size: 20px;
+  text-align: center;
+}
+.cards-equipo i{
+  color: #E0B80E;
+  padding-right: 7px;
+  font-size: 12px;
+  transition: 0.5s;
+}
+.docente{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.cards-equipo-cont{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 80%;
+}
+.dept{
+  margin: auto;
+  margin-bottom: 30px;
+}
+.dept h3{
+  font-family: "Bebas Neue";
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.dept p{
+  font-family: "Anton";
+  font-size: 18px;
+  padding: 5px 20px 5px 20px;
+  transition: 0.5s;
+}
+#blue{
+  color: #4848EF;
+}
+.list-dept{
+  width: 30.357rem;
+  margin: 0px 0 10px 0;
+  display: flex;
+  position: relative;
+  background-color: #EFEFEF;
+}
+.list-dept::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #09C5D8;
+  height: 100%;
+  width: 0%;
+  transition: 0.35s;
+}
+.list-dept:hover:before, .cards-equipo:hover:before{
+  width: 100%;
+  color: white;
+}
+.cards-equipo:hover h3, .cards-equipo:hover i{
+  color: white;
+}
+.list-dept:hover #blue{
+  color: white;
+}
+.list-dept-cont{
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
 /* ESPECIALIDADES ----------------------------------------------------- */
+
 .cards-container.esp-layout{
   align-items: flex-start;
   justify-content: center;
@@ -1105,7 +1153,8 @@ main{
             padding-left: 1rem;
           }
 
-/*-------------------- BACHILLERATO INTERNACIONAL ---*/
+/*-------------------- BACHILLERATO INTERNACIONAL ---------------------*/
+
 .title-bi{
   height: 50%;
   width: 100%;
