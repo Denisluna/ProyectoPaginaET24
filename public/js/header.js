@@ -8,7 +8,7 @@ $(function(){
 
   if($(`a.c-link[href="${window.location.pathname}"]`).length > 0){
     $(`a.c-link[href="${window.location.pathname}"]`).addClass('active');
-    if($(`a.c-link[href="${window.location.pathname}"]`).parents('.dropdown').length > 0){
+    if($(`a.c-link[href="${window.location.pathname}"]`).parents('.dropdown:not(#user)').length > 0){
       $('.dropdown > .nav-link').addClass('active');
       if($(`a.c-link[href="${window.location.pathname}"]`).parents('.sub-dropdown').length > 0){
         $('.sub-dropdown > .nav-link').addClass('active');

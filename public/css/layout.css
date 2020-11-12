@@ -72,11 +72,13 @@ header{
   height: 100%;
 }
   .nav-link{
+    border: none;
     text-decoration: none;
     color: #b1b1b1;
     display: inline-block;
     transition: .3s;
     background: transparent;
+    position: relative;
     cursor: pointer;
   }
   .main-navigation > .nav-link, .btns-container > .nav-link, .dropdown > .nav-link{
@@ -94,7 +96,7 @@ header{
     border-bottom: 4px solid #E0B80E;
     border-left: none;
   }
-  .dropdown-content  .c-link.active{
+  .dropdown-content  .c-link.active, #mng.dropdown-nav-links .c-link.active{
     border-left: 4px solid #E0B80E !important;
     border-bottom: none;
   }
@@ -112,11 +114,18 @@ header{
     .dropdown .dropdown-content{
       position: absolute;
       top: 100%;
-      left: 0;
       height: auto;
       min-width: 250px;
       padding: 0.9375rem 0;
       pointer-events: none;
+    }
+    .dropdown .dropdown-content:not(#u-dp){
+      left: 0;
+    }
+    .dropdown #u-dp.dropdown-content{
+      right: 0;
+      padding-right: 10px;
+      z-index: 10;
     }
     .dropdown:hover .dropdown-content{
       pointer-events: all;
@@ -159,22 +168,52 @@ header{
         transition: transform .6s cubic-bezier(.075,.82,.165,1),opacity .6s cubic-bezier(.075,.82,.165,1);
         transition-delay: 0s;
       }
+      #mng.dropdown-nav-links{
+        pointer-events: all;
+        transform: none;
+        transition: none;
+        opacity: 1;
+      }
+      #u-op.dropdown-nav-links{
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #d1d1d1;
+        right: 0;
+
+      }
+      #u-op.dropdown-nav-links::after{
+        content: "";
+        top: -6px;
+        right: 40px;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        transform: rotate(45deg);
+        position: absolute;
+        border-top: 1px solid #d1d1d1;
+        border-left: 1px solid #d1d1d1;
+        z-index: -2;
+      }
       .dropdown:hover .dropdown-content > .dropdown-nav-links{
         transform: translateY(0);
         opacity: 1;
         transition-delay: .5s;
         pointer-events: all;
       }
-        .dropdown-nav-links a.nav-link{
+        .dropdown-nav-links .nav-link{
           display: block;
-          padding: 5px 1.875rem;
+          padding: 0.625rem 1.875rem;
           max-height: 3.125rem;
-          margin-bottom: 5px;
+        }
+        #u-op.dropdown-nav-links .nav-link{
+          text-align: left;
+          padding: 0.75rem 1.875rem;
+          width: 100%;
         }
         .dropdown-nav-links a:last-child{
           margin-bottom: 0;
         }
-        .dropdown:hover .nav-link i{
+        .dropdown:hover .nav-link i.fa-chevron-down{
           transform: rotate(180deg);
         }
           .sub-dropdown{
@@ -302,7 +341,7 @@ aside.contact{
     right: 0;
     bottom: 0;
     width: 450px;
-    padding: 1rem 2rem;
+    padding: 1rem;
     background: #fff;
     border-left: 1px solid #e1e1e1;
     transition: transform .6s cubic-bezier(.075,.82,.165,1);
@@ -700,6 +739,7 @@ main{
   color: inherit;
   display: block;
   max-width: 100%;
+  min-width: 100%;
   width: 100%;
   padding: 0.5rem 0.75rem;
   font-family: inherit;
@@ -920,9 +960,10 @@ main{
 .container-content.hlf-width{
   max-width: 600px;
 }
-.container-content.min-width{
-  max-width: 450px;
+.container-content.ltl-width{
+  max-width: 350px
 }
+
   .container-content .container-content{
     padding: 0;
   }
@@ -1087,4 +1128,29 @@ img.bi-logo{
   margin: 0 auto;
   width: 100%;
   max-width: 400px;
+}
+
+/*-------------------- Gestion  ---*/
+
+#mng-op.container-content{
+  height: 100%;
+  padding-top: 5rem;
+}
+#mng-op.container-content .cards-container{
+  height: 100%;
+  flex-wrap: nowrap;
+}
+#mng-op.container-content .container-content{
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  height: 100%;
+}
+#mng-op.container-content .container-content.ttl-width{
+  max-width: 1100px;
+  z-index: 2;
+}
+.g-cont.container-content .container-content.ltl-width{
+  margin-right: 10px;
+  background: #fff;
+  z-index: 3;
 }

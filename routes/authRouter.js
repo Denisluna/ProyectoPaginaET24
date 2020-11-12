@@ -10,7 +10,7 @@ router.get('/register', checkNotAuthenticated, (req, res) => {
   res.render('register');
 });
 
-router.post('/login', checkNotAuthenticated,passport.authenticate('local', {
+router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/users/login',
   failureFlash: true
@@ -48,14 +48,31 @@ router.post('/register', checkNotAuthenticated, async(req, res) => {
   }
 });
 
-router.get('/gestion-vistas', checkAuthenticated, (req, res, next) => {
-  if(req.user.hasAdministratorPermissions){
-    return next();
-  }
+router.delete('/logout', (req, res) => {
+  req.logOut();
   res.redirect('/');
-}, (req, res) => {
+})
+
+
+router.get('/gestion', checkAuthenticated, checkPermissions, (req, res) => {
+  console.log(req.user);
   res.render('gestion-vistas');
 });
+
+router.get('/gestion/mensajes', checkAuthenticated, checkPermissions, (req, res) => {
+  res.render('gestion/messages');
+})
+router.get('/gestion/proyectos', checkAuthenticated, checkPermissions, (req, res) => {
+  res.render('gestion/projects');
+})
+router.get('/gestion/usuarios', checkAuthenticated, checkPermissions, (req, res) => {
+  res.render('gestion/users');
+})
+
+router.get('/perfil', checkAuthenticated, (req, res) =>{
+  res.render('profile');
+});
+
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
@@ -69,6 +86,13 @@ function checkNotAuthenticated(req, res, next) {
     return res.redirect('/')
   }
   next()
+}
+function checkPermissions(req, res, next) {
+  console.log(req.user);
+  if(req.user.hasAdministratorPermissions){
+    return next();
+  }
+  res.redirect('/');
 }
 
 

@@ -43,7 +43,9 @@ app.use((req, res, next) => {
   if(req.isAuthenticated()){
     res.locals = {
       user: {
-        hasAdministratorPermissions: req.user.hasAdministratorPermissions
+        _id: req.user._id,
+        hasAdministratorPermissions: req.user.hasAdministratorPermissions,
+        name: req.user.name,
       }
     }
   }

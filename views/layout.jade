@@ -19,6 +19,7 @@ html(lang='en')
      //-     h1.hide #[span.text E.T. N° 24]
      //-     h1.hide #[span.text Más de 70 años guiando]
      //-     h1.hide #[span.text a las futuras generaciones]
+     //block preload 
     .page-transition
       img(src="/../public/images/logo.png", alt="logo")
       ul.rows-c
@@ -54,7 +55,16 @@ html(lang='en')
           span.nav-link.show-menu-btn #[i.fas.fa-bars]
           span.nav-link.contact-btn #[i.fas.fa-envelope]
           if(typeof user != 'undefined')
-            a.nav-link(href="javascript:void(0)") #[i.fas.fa-user]
+            #user.dropdown
+              span.nav-link #{user.name} #[i.fas.fa-user] #[i.fas.fa-chevron-down]
+              #u-dp.dropdown-content
+                  #u-op.dropdown-nav-links
+                    a.nav-link.c-link(href="/users/perfil") #[i.fas.fa-user] Perfil
+                    a.nav-link.c-link(href="/users/gestion/mensajes") #[i.fas.fa-envelope] Mensajes
+                    if user.hasAdministratorPermissions
+                      a.nav-link.c-link(href="/users/gestion") #[i.fas.fa-edit] Gestión
+                    form(action="/users/logout?_method=DELETE" method="POST")
+                      button.nav-link(type="submit") #[i.fas.fa-sign-in-alt] Cerrar Sesión
           else
             a.nav-link.sign-btn(href="/users/login") #[i.fas.fa-sign-in-alt]
       nav.res-navigation
@@ -91,6 +101,38 @@ html(lang='en')
           .sm-limk
             a(href="https://m.facebook.com/Periódico-Escolar-ET-Nº-24-1607076049519806/" target="_blank") #[i.fab.fa-facebook-f] Periódico Escolar ET N°24
         iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13136.359323944864!2d-58.4957791!3d-34.6018899!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4f587acd9ac33fe6!2sEt24!5e0!3m2!1ses-419!2sar!4v1603147338605!5m2!1ses-419!2sar" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0")
+        if(typeof user != 'undefined')  
+          if !user.hasAdministratorPermissions
+            .form-container
+              h3.p-title Envianos un mensaje
+              form(action="/message" method="POST")
+                .input-row 
+                  .lb-input  
+                    label(for="asunto") Asunto
+                  input(type="text" id="asunto" name="asunto" required)
+                .input-row 
+                  .lb-input  
+                    label(for="password") Mensaje
+                  textarea(name="mensaje" required)
+                button.btn(type="submit") Enviar 
+        else
+          .form-container
+            h3.p-title Envianos un mensaje
+            form(action="/message" method="POST")
+              if(typeof user == 'undefined')
+                .input-row
+                  .lb-input  
+                    label(for="email") Email
+                  input(type="email" id="email" name="email" required)
+              .input-row 
+                .lb-input  
+                  label(for="asunto") Asunto
+                input(type="text" id="asunto" name="asunto" required)
+              .input-row 
+                .lb-input  
+                  label(for="password") Mensaje
+                textarea(name="mensaje" required)
+              button.btn(type="submit") Enviar 
   block contenido
   script(defer src="https://unpkg.com/@barba/core" integrity="" crossorigin="anonymous")
   script(defer src="/../public/js/pageTransition.js")
