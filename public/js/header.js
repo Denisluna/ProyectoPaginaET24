@@ -24,10 +24,18 @@ $(function(){
     }
   });
 
+  $('body').on('click', '.open-g-nav', function(){
+    $('html').addClass('g-nav-is-open');
+  });
+  $('body').on('click', '#op-nav .close-btn', function(){
+    $('html').removeClass('g-nav-is-open');
+  });
+
+
   $('body').on('click', '.contact-btn', function(){
     $('html').addClass('contact-show');
   });
-  $('body').on('click', '.close-btn', function(){
+  $('body').on('click', '.contact .close-btn', function(){
     $('html').removeClass('contact-show');
   });
 

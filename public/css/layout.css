@@ -1184,21 +1184,41 @@ img.bi-logo{
 #mng-op.container-content{
   height: 100%;
   padding-top: 5rem;
+  padding-bottom: 1rem;
 }
 #mng-op.container-content .cards-container{
+  margin-top: 0;
   height: 100%;
   flex-wrap: nowrap;
 }
 #mng-op.container-content .container-content{
-  border-radius: 5px;
-  border: 1px solid #d1d1d1;
   height: 100%;
 }
 #mng-op.container-content .container-content.ttl-width{
   max-width: 1100px;
   z-index: 2;
 }
+#mng-op.container-content .container-content.ltl-width{
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+}
+#mng-op.container-content .container-content.ltl-width .close-ct{
+  display: none;
+  padding-right: 1rem;
+}
+#mng-op.container-content .container-content.ltl-width .open-g-nav{
+  display: none;
+  position: absolute;
+  right: 0;
+  padding: .625rem 1rem;
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 0 5px 5px 0;
+  transform: translateX(101%);
+  font-size: 1.5rem;
+}
 .g-cont.container-content .container-content.ltl-width{
+
   margin-right: 10px;
   background: #fff;
   z-index: 3;

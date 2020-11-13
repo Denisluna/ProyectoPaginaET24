@@ -21,8 +21,11 @@ function basicPageTransition(){
 
 function transitiongop(){
   const tl =  gsap.timeline();
-
-  tl.to('#op-nav', {duration: .5, marginRight: "10px"});
+  if($(window).width() > 1000){
+    tl.to('#op-nav', {duration: .5, marginRight: "10px"});
+  }else{
+    tl.to('#op-nav', {duration: .5, marginLeft: "-50%"});
+  }
 }
 function transitionOptionsLeaving(){
   const tl =  gsap.timeline();
