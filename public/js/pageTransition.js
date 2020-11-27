@@ -22,9 +22,9 @@ function basicPageTransition(){
 function transitiongop(){
   const tl =  gsap.timeline();
   if($(window).width() > 1000){
-    tl.to('#op-nav', {duration: .5, marginRight: "10px"});
+    tl.to('#op-nav', {duration: .5, marginRight: "10px", height: "400px"});
   }else{
-    tl.to('#op-nav', {duration: .5, marginLeft: "-50%"});
+    tl.to('#op-nav', {duration: .5, x: "-100%", opacity: 0});
   }
 }
 function transitionOptionsLeaving(){
@@ -72,9 +72,11 @@ function contentAnimation(){
   tl.from('.view-content', {duration: 1, opacity: 0, y: 100});
 }
 
+
 barba.init({
   sync: true,
   preventRunning: true,
+  cacheIgnore: true,
   requestError: (trigger, action, url, response) => {
     console.log(response);
   },
@@ -158,14 +160,18 @@ barba.init({
       namespace: [
         "messages",
         "projects",
-        "users"
+        "users",
+        "messageView",
+        "projectView"
       ]
     },
     to: {
       namespace: [
         "messages",
         "projects",
-        "users"
+        "users",
+        "messageView",
+        "projectView"
       ]
     },
     async leave(data){

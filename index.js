@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser'); // analiza las cookies
 const session = require('express-session'); // guarda la sesion
 const flash = require('express-flash') // enviar mensajes en redirects
 const passport = require('passport'); // autenticacion de sesion
-const addLocalStrategy = require('./localPassport-config') // estrategia de autenticacion 
+const addLocalStrategy = require('./localPassport-config') // estrategia de autenticacion
 
 const app = express();
 
@@ -63,6 +63,7 @@ app.use((req, res, next) => {
 app.use('/institucional', require('./routes/institucionalRouter'));
 //monta el router con  el direccionamiento para las rutas de sesion
 app.use('/users', require('./routes/authRouter'))
+app.use('/messages', require('./routes/messagesRouter'));
 
 
 // Direccionamiento basico
@@ -80,6 +81,12 @@ app.get('/talleres/club-exploradores',(req, res) => {
 });
 app.get('/bi',(req, res) => {
   res.render('bi');
+});
+
+
+//404 not found page
+app.use((req, res, next) => {
+  res.status(404).render('error');
 });
 
 app.listen(PORT, () => {

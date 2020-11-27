@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const passport = require('passport');
-var User = require('../models/user');
+
+const User = require('../models/user');
+
 
 router.get('/login', checkNotAuthenticated,(req, res) => {
   res.render('login');
@@ -11,10 +13,14 @@ router.get('/register', checkNotAuthenticated, (req, res) => {
 });
 
 router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-  successRedirect: '/',
   failureRedirect: '/users/login',
   failureFlash: true
-}));
+}), (req, res) => {
+  if(req.session.redirectTo){
+    return res.redirect(req.session.redirectTo);
+  }
+  res.redirect('/');
+});
 
 router.post('/register', checkNotAuthenticated, async(req, res) => {
   const {name, email, password, password_confirmation} = req.body;
@@ -49,25 +55,19 @@ router.post('/register', checkNotAuthenticated, async(req, res) => {
 });
 
 router.delete('/logout', (req, res) => {
+  req.session.redirectTo = undefined;
   req.logOut();
   res.redirect('/');
 })
 
+router.use('/gestion', checkAuthenticated, checkPermissions);
+router.use('/gestion/mensajes', require('./management/msgMngRouter'));
+router.use('/gestion/usuarios',  require('./management/userMngRouter'));
+router.use('/gestion/proyectos', require('./management/prjsMngRouter'));
 
-router.get('/gestion', checkAuthenticated, checkPermissions, (req, res) => {
-  console.log(req.user);
+router.get('/gestion', (req, res) => {
   res.render('gestion-vistas');
 });
-
-router.get('/gestion/mensajes', checkAuthenticated, checkPermissions, (req, res) => {
-  res.render('gestion/messages');
-})
-router.get('/gestion/proyectos', checkAuthenticated, checkPermissions, (req, res) => {
-  res.render('gestion/projects');
-})
-router.get('/gestion/usuarios', checkAuthenticated, checkPermissions, (req, res) => {
-  res.render('gestion/users');
-})
 
 router.get('/perfil', checkAuthenticated, (req, res) =>{
   res.render('profile');
@@ -78,9 +78,9 @@ function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next()
   }
+  req.session.redirectTo = req.originalUrl;
   res.redirect('/users/login')
 }
-
 function checkNotAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return res.redirect('/')
@@ -88,7 +88,6 @@ function checkNotAuthenticated(req, res, next) {
   next()
 }
 function checkPermissions(req, res, next) {
-  console.log(req.user);
   if(req.user.hasAdministratorPermissions){
     return next();
   }

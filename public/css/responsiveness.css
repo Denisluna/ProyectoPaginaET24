@@ -1,7 +1,7 @@
 @media screen and (max-width: 1000px){
-  #mng-op.container-content.g-cont .container-content.ltl-width{
+  #mng-op.container-content.g-cont #op-nav.container-content{
     padding-top: 5rem;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -11,17 +11,17 @@
     transition: transform .6s cubic-bezier(.075,.82,.165,1);
     transform: translateX(-100%);
   }
-  #mng-op.container-content.g-cont .container-content.ltl-width .open-g-nav{
+  #mng-op.container-content.g-cont #op-nav.container-content .open-g-nav{
     display: block;
   }
-  #mng-op.container-content.g-cont .container-content.ltl-width .close-ct{
+  #mng-op.container-content.g-cont #op-nav.container-content .close-ct{
     display: block;
     margin-bottom: 1rem;
   }
-  html.g-nav-is-open #mng-op.container-content.g-cont .container-content.ltl-width{
+  html.g-nav-is-open #mng-op.container-content.g-cont #op-nav.container-content{
     transform: translateX(0);
   }
-  html.g-nav-is-open #mng-op.container-content.g-cont .container-content.ltl-width .open-g-nav{
+  html.g-nav-is-open #mng-op.container-content.g-cont #op-nav.container-content .open-g-nav{
     display: none;
   }
 }
@@ -72,7 +72,7 @@
     width: 100%;
   }
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 590px) {
   html{
     font-size: 16px;
   }
@@ -83,7 +83,37 @@
   .slider-content h1{
     font-size: 12vw;
   }
+  .block .content-desc{
+    padding-bottom: 1rem;
+  }
   .block .content-desc p{
     text-align: justify;
+    padding: 1rem;
+  }
+  #mng-op.container-content.g-cont #op-nav.container-content{
+    max-width: 100%;
+  }
+  #mng-op.container-content{
+    padding: 5rem 0;
+  }
+  #caminos-box{
+    margin-top: 0;
+  }
+  .block.img-vision{
+    padding: 0;
+  }
+  .img-vision::before{
+    background-image: none;
+    background-color: #fff;
+  }
+  .img-vision .content-desc{
+    padding-top: 40px;
+    height: 100%;
+    width: 100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: white;
+    border: none;
   }
 }

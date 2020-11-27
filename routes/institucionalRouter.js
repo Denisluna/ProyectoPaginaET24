@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const ProjectGroup = require('../models/projectGroup');
+
 
 router.get('/especialidades/computacion',(req, res) => {
   res.render('institucional/especialidades/computacion');
@@ -6,8 +8,11 @@ router.get('/especialidades/computacion',(req, res) => {
 router.get('/especialidades/ade',(req, res) => {
   res.render('institucional/especialidades/ADE');
 });
-router.get('/proyectos-escolares',(req, res) => {
-  res.render('institucional/proy');
+router.get('/proyectos-escolares', (req, res) => {
+  ProjectGroup.find().populate('associatedProjects').exec((err, groups) => {
+    if(err) return res.redirect('/');
+    res.render('institucional/proy', {groups});
+  });
 });
 router.get('/vision',(req, res) => {
   res.render('institucional/vision');

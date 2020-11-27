@@ -24,6 +24,10 @@ $(function(){
     }
   });
 
+  $('body').on('click', '.close-msg', function(){
+    $(this).parents('.msg').hide();
+  });
+
   $('body').on('click', '.open-g-nav', function(){
     $('html').addClass('g-nav-is-open');
   });
@@ -48,6 +52,44 @@ $(function(){
     }
 
     e.stopPropagation();
+  });
+
+  $('#send-msg').on('submit', function(e){
+    let email = $('form#send-msg input[name="email"]');
+    let subject = $('form#send-msg input[name="subject"]');
+    let message = $('form#send-msg textarea[name="message"]');
+
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        email.val('');
+        subject.val('');
+        message.val('');
+      }
+      if (this.readyState == 4 && this.status == 400) {
+        let errors = JSON.parse(this.responseText);
+        let errorsContainer = $('.errors');
+
+        console.log(errors);
+        let html = '';
+        let emailExists = '';
+        for(let error in errors){
+          emailExists = errors[error] == "El email ya esta en uso." ? '<a class="err-link" href="/users/login">Inicia Sesión</a>' : '';
+          html += `<div class="msg err_c">
+                    <p>${errors[error]}${emailExists}</p>
+                    <div class="close-msg">
+                      <i class="fas fa-times"></i>
+                    </div>
+                   </div>`
+        }
+        errorsContainer.html(html);
+      }
+    };
+    request.open("POST", "/messages", true);
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send(`email=${email.val()}&subject=${subject.val()}&content=${message.val()}`);
+
+    e.preventDefault();
   });
 
 });
