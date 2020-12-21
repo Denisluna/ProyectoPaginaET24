@@ -22,7 +22,7 @@ var answerSchema = new Schema({
 });
 
 
-//crea el modelo para poder insertar "Registros" sigueindo el esquema de usuario
+//crea el modelo para poder insertar "Registros" siguiendo el esquema de usuario
 const Answer = mongoose.model('Respuesta', answerSchema);
 
 module.exports = Answer;

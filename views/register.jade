@@ -8,9 +8,9 @@ block contenido
         form(action="/users/register" method="POST")
           .input-row 
             .lb-input
-              label(for="name") Nombre
+              label(for="name") Nombre Completo
             input(type="text"
-            id="name" 
+            id="name"
             name="name" 
             value= typeof err_messages != 'undefined' ? typeof err_messages.name != 'undefined' ? err_messages.name : '' : '' 
             required)

@@ -1,6 +1,6 @@
 extends ./layout.jade
-block preload
-  include ./partials/preload.jade
+//- block preload
+//-   include ./partials/preload.jade
 block contenido
   main(data-barba="container" data-barba-namespace="inicio")
     .block-slider
@@ -94,3 +94,74 @@ block contenido
             .val-tit
               h1 Solidaridad
             i(class="fas fa-people-carry")
+    .footer
+      .slogan
+        h1 E.T. N° 24...
+        h1 Más de 70 años guiando a las futuras generaciones
+      .cards-container.foot.margin0
+        .cards-footer
+          h1 CONTÁCTANOS
+          .sm-links.foot-links
+            .sm-limk
+              a(href="javascript:void(0)") #[i.fas.fa-phone-alt] +54 11 4055-2245
+            .sm-limk
+              a(href="mailto:et24-defbsas@gmail.com") #[i.far.fa-envelope-open] et24-defbsas@gmail.com
+        .cards-footer
+          h1 REDES SOCIALES
+          .sm-links.foot-links
+            .sm-limk
+              a(href="https://instagram.com/periodico.escolar.et24?igshid=1ecfs4bgj1twm" target="_blank") #[i.fab.fa-instagram] Periódico Escolar ET N°24
+            .sm-limk
+              a(href="https://www.facebook.com/Peri%C3%B3dico-Escolar-ET-N%C2%BA-24-1607076049519806/" target="_blank") #[i.fab.fa-facebook-f] Periódico Escolar ET N°24
+        .cards-footer.equipo-des
+          h1 EQUIPO DE DESARROLLO
+          .cards-container.margin0
+            .dept.ancho
+              .list-dept.desarrolladores
+                .list-dept-cont.desarrollador
+                  .img-desarrollador
+                    img(src="../public/images/SantiagoFondo.png", alt="Lucas De La Pina")
+                  p Santiago Betancort | Lider
+                  //- span(style="color: #E0B80E; font-size: 18px; padding: 5px 0 5px 0;") Lider
+            .dept.ancho 
+              .list-dept.desarrolladores
+                .list-dept-cont.desarrollador
+                  .img-desarrollador
+                    img(src="../public/images/DenisFondo.png", alt="Lucas De La Pina")
+                  p Denis Luna | Programador
+                  //- span(style="color: #E0B80E; font-size: 18px; padding: 5px 0 5px 0;") Programador
+            .dept.ancho  
+              .list-dept.desarrolladores
+                .list-dept-cont.desarrollador
+                  .img-desarrollador
+                    img(src="../public/images/LukiluFondo.png", alt="Lucas De La Pina")
+                  p Lucas González | Programador
+                  //- span(style="color: #E0B80E; font-size: 18px; padding: 5px 0 5px 0;") Programador
+            .dept.ancho    
+              .list-dept.desarrolladores
+                .list-dept-cont.desarrollador
+                  .img-desarrollador
+                    img(src="../public/images/TituFondo.png", alt="Lucas De La Pina")
+                  p Lucas De La Pina | Programador
+                  //- span(style="color: #E0B80E; font-size: 18px; padding: 5px 0 5px 0;") Programador
+            .dept.ancho    
+              .list-dept.desarrolladores
+                .list-dept-cont.desarrollador
+                  .img-desarrollador
+                    img(src="../public/images/ThiagoFondo.png", alt="Lucas De La Pina")
+                  p Thiago Montenegro | Documentador
+                  //- span(style="color: #E0B80E; font-size: 18px; padding: 5px 0 5px 0;") Documentador
+            .dept.ancho    
+              .list-dept.desarrolladores
+                .list-dept-cont.desarrollador
+                  .img-desarrollador
+                    img(src="../public/images/VictorFondo.png", alt="Lucas De La Pina")
+                  p Victor Paredes | Documentador
+                  //- span(style="color: #E0B80E; font-size: 18px; padding: 5px 0 5px 0;") Documentador
+            .dept.ancho    
+              .list-dept.desarrolladores
+                .list-dept-cont.desarrollador
+                  .img-desarrollador
+                    img(src="../public/images/NasanteFondo.png", alt="Lucas De La Pina")
+                  p Nahuel Serruya | Diseñador
+                  //- span(style="color: #E0B80E; font-size: 18px; padding: 5px 0 5px 0;") Diseñador

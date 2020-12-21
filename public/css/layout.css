@@ -535,7 +535,9 @@ main{
 #caminos-box .obj-box .slider-content h1{
   text-align: center;
   font-size: 3.4rem;
-  color: #09C5D8;
+  color: #E0B80E;
+  text-shadow: 2px 2px 2px black;
+  /* -webkit-text-stroke: 0.1px blue; */
 }
 #caminos-box .obj-box .obj-tit p{
   font-size: 1rem;
@@ -740,7 +742,7 @@ main{
   right: 0;
   z-index: -1;
   transform-origin: center center 0;
-  background-image: url("../images/patio.jpg");
+  background-image: url("../images/escuela-noche.png");
   background-size: cover;
   background-position: fixed;
   background-attachment: fixed;
@@ -1201,7 +1203,7 @@ main{
   align-items: center;
   justify-content: center;
   display: flex;
-  padding-top: 4.0625rem
+  padding-top: 4.0625rem;
 }
 .title-bi h1{
   text-transform: uppercase;
@@ -1209,6 +1211,7 @@ main{
   font-size: 4rem;
   letter-spacing: 0.3rem;
   color: #fff;
+  text-align: center;
 }
 img.bi-logo{
   text-align: center;
@@ -1579,3 +1582,83 @@ img.bi-logo{
     .project-grouplist .project.selected{
       border: 1px solid #2ecc71;
     }
+
+/* FOOTER ----------------------------------------------------------- */
+
+.footer{
+  background-color: #4848EF;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.foot{
+  flex-direction: column;
+}
+.margin0{
+  margin-top: 10px;
+}
+.slogan{
+  background-color: #09C5D8;
+  min-width: 250px;
+  width: 250px;
+  height: 100%;
+  font-family: Bebas Neue;
+  font-size: 20px;
+  padding: 25px;
+}
+.cards-footer{
+  width: 230px;
+  height: 100px;
+  margin: 15px 10px;
+  font-family: Anton;
+  color: white;
+}
+.cards-footer h1{
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+.cards-footer p{
+  font-size: 16px;
+  padding: 8px 0 0px 12px;
+}
+.equipo-des{
+  width: 65%;
+}
+.foot-links{
+  color: white;
+}
+.foot-links a{
+  color: white;
+}
+.ancho{
+  width: 45%;
+  margin: 0 auto;
+  margin-bottom: 2px;
+}
+.desarrolladores{
+  background-color: transparent;
+}
+.desarrolladores::before{
+  content: none;
+}
+.desarrolladores:hover p{
+  color: #E0B80E;
+}
+.desarrollador{
+  justify-content: flex-start;
+}
+.img-desarrollador{
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.img-desarrollador img{
+  width: 100%;
+  height: 120%;
+  top: -2px;
+  position: relative;
+}

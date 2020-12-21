@@ -40,7 +40,7 @@ app.use(session({
 }));
 app.use(flash());
 
-// define la estrategia local para la autenticaion de la sesion
+// define la estrategia local para la autenticación de la sesion
 addLocalStrategy(passport)
 app.use(passport.initialize());
 app.use(passport.session());
@@ -69,18 +69,6 @@ app.use('/messages', require('./routes/messagesRouter'));
 // Direccionamiento basico
 app.get('/',(req, res) => {
   res.render('inicio');
-});
-app.get('/historia',(req, res) => {
-  res.render('historia');
-});
-app.get('/talleres/aleman',(req, res) => {
-  res.render('talleres/aleman');
-});
-app.get('/talleres/club-exploradores',(req, res) => {
-  res.render('talleres/clube');
-});
-app.get('/bi',(req, res) => {
-  res.render('bi');
 });
 
 
